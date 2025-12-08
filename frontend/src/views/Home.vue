@@ -39,9 +39,7 @@
         <i :class="isMusicPlaying ? 'bi bi-volume-up-fill' : 'bi bi-volume-mute-fill'"></i>
       </button>
       <select v-model="selectedSong" @change="changeSong" class="song-selector form-select shadow-sm">
-        <option value="">
-          <i class="bi bi-music-note-beamed"></i> Elige una canción
-        </option>
+          <option value="">🎵 Elige una canción</option>
         <option value="happy">🎉 Happy - Pharrell Williams</option>
         <option value="baby-shark">🦈 Baby Shark</option>
         <option value="twinkle">⭐ Twinkle Twinkle Little Star</option>
