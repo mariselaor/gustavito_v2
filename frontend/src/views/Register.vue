@@ -94,7 +94,6 @@
                     class="d-none" 
                     id="fileInput"
                     accept="image/*"
-                    required
                   />
                   <label for="fileInput" class="btn btn-primary w-100 rounded-pill py-3 file-label shadow-sm">
                     <span v-if="!file">
