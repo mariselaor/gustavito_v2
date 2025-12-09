@@ -10,9 +10,9 @@
     <p class="mt-3">Selecciona una lección para comenzar</p>
 
     <div class="row g-2 justify-content-center">
-<div class="col-10 col-md-4 col-lg-3 mb-4" v-for="l in lessons" :key="l.id">        <div class="p-4 lesson-card">
+        <div class="col-10 col-md-4 col-lg-3 mb-4" v-for="l in lessons" :key="l.id">        <div class="p-4 lesson-card">
           <h4 class="fw-bold">{{ l.title }}</h4>
-          <button class="btn btn-primary mt-3">Entrar</button>
+          <button class="btn btn-primary mt-3" @click="openLesson(l.id)">Entrar</button>
           
         </div>
       </div>
@@ -35,7 +35,18 @@ export default {
   methods: {
   goBack() {
     this.$router.back()
+  }, 
+
+  openLesson(id) {
+    if (id === 1) {
+      this.$router.push("/lecciones/vocales");
+    } else if (id === 2) {
+      this.$router.push("/lecciones/consonantes");
+    } else if (id === 3) {
+      this.$router.push("/lecciones/silabas");
+    }
   }
+  
 }
 
 };
