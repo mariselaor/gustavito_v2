@@ -1,7 +1,9 @@
 <template>
-  <!-- 🔙 Botón volver -->
-  <button class="btn-back" @click="goBack">⬅</button>
-
+ <!-- Botón Volver -->
+    <button class="btn-back shadow-lg" @click="goBack">
+      <i class="bi bi-arrow-left"></i>
+    </button> 
+      
   <div class="vowel-scene">
 
     <!-- Título -->
