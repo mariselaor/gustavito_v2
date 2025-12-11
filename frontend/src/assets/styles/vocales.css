@@ -1,25 +1,90 @@
-
-.lesson-bg {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+/* Fondo del juego */
+.vowel-scene {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#4fc3f7, #b3e5fc);
+  position: relative;
+  overflow: hidden;
 }
 
-.vowel-card {
-  background: white;
-  padding: 20px;
-  border-radius: 20px;
-  margin: 15px auto;
-  max-width: 300px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.letter {
-  font-size: 3rem;
+/* Título */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
   font-weight: bold;
+  margin-top: 15px;
+  text-shadow: 2px 2px #444;
 }
 
-.vowel-img {
+/* Botón volver */
+.btn-back {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+/* Vocales */
+.vowel {
+  position: absolute;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #003366;
+  cursor: pointer;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.vowel:active {
+  transform: scale(0.9);
+}
+
+.a { left: 10%; top: 30%; }
+.e { left: 45%; top: 20%; }
+.i { right: 10%; top: 30%; }
+.o { left: 30%; bottom: 15%; }
+.u { right: 30%; bottom: 15%; }
+
+/* Dibujos */
+.center-img {
+  position: absolute;
+  width: 90px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.bear { left: 20%; top: 45%; }
+.cloud { left: 45%; top: 45%; }
+.grapes { right: 20%; top: 45%; }
+.star { left: 45%; top: 10%; width: 70px; }
+
+/* Decoraciones */
+.decor {
+  position: absolute;
   width: 120px;
-  margin: 10px 0;
 }
 
+.plane {
+  top: 70px;
+  left: 20px;
+}
+
+.child {
+  top: 60px;
+  right: 20px;
+}
+
+/* Animación */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

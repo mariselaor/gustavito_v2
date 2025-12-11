@@ -1,76 +1,42 @@
 <template>
-  <!-- 🔙 Botón Volver -->
-  <button class="btn-back" @click="goBack">
-    <i class="bi bi-arrow-left"></i>
-  </button> 
+  <!-- 🔙 Botón volver -->
+  <button class="btn-back" @click="goBack">⬅</button>
 
-  <div class="lesson-bg text-center p-4">
-    <h1 class="fw-bold text-white mb-4"> Las Vocales</h1>
+  <div class="vowel-scene">
 
-    <!-- Grid de tarjetas -->
-    <div class="vowel-grid">
-      <div class="vowel-card new-card" v-for="v in vowels" :key="v.letter">
+    <!-- Título -->
+    <h2 class="title">⭐ Haz clic en cada vocal ⭐</h2>
 
-        <!-- Letra -->
-        <div class="letter-circle">
-          {{ v.letter }}
-        </div>
+    <!-- Decoraciones -->
+    <img src="../assets/img/nube2.png" class="decor plane" />
+    <img src="" class="decor child" />
 
-        <!-- Imagen -->
-        <img :src="v.image" class="vowel-img" />
+    <!-- Vocales -->
+    <div class="vowel a" @click="speak('A')">A</div>
+    <div class="vowel e" @click="speak('E')">E</div>
+    <div class="vowel i" @click="speak('I')">I</div>
+    <div class="vowel o" @click="speak('O')">O</div>
+    <div class="vowel u" @click="speak('U')">U</div>
 
-        <!-- Palabra -->
-        <p class="word">{{ v.word }}</p>
+    <!-- Dibujos centrales -->
+    <img src="" class="center-img bear" />
+    <img src="" class="center-img cloud" />
+    <img src="" class="center-img grapes" />
 
-        <!-- Botón hablar -->
-        <button @click="speak(v.letter)" class="btn btn-primary rounded-pill play-btn">
-          🔊 Escuchar
-        </button>
-
-      </div>
-    </div>
+    <!-- Estrella -->
+    <img src="" class="center-img star" />
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      vowels: [
-        { letter: 'A', word: 'Avión', image: '/img/avion.png' },
-        { letter: 'E', word: 'Elefante', image: '/img/elefante.png' },
-        { letter: 'I', word: 'Iglesia', image: '/img/iglesia.png' },
-        { letter: 'O', word: 'Oso', image: '/img/oso.png' },
-        { letter: 'U', word: 'Uva', image: '/img/uva.png' }
-      ]
-    }
-  },
-
-  mounted() {
-    this.loadSpanishVoice()
-  },
-
   methods: {
-    /* Buscar voz en español */
-    getSpanishVoice() {
-      const voices = window.speechSynthesis.getVoices()
-      return voices.find(v => v.lang.startsWith('es')) || null
-    },
-
-    loadSpanishVoice() {
-      window.speechSynthesis.onvoiceschanged = () => {
-        this.spanishVoice = this.getSpanishVoice()
-      }
-    },
-
     speak(text) {
       const speech = new SpeechSynthesisUtterance(text)
       speech.lang = 'es-ES'
-      speech.voice = this.getSpanishVoice()
       window.speechSynthesis.cancel()
       window.speechSynthesis.speak(speech)
     },
-
     goBack() {
       this.$router.back()
     }
@@ -78,4 +44,4 @@ export default {
 }
 </script>
 
-<style src="../assets/styles/vocales.css"></style>
+<style src="@/assets/styles/vocales.css"></style>
