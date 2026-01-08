@@ -1,0 +1,110 @@
+/* Escena principal */
+.letter-scene {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #87ceeb, #e0f2fe);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Título */
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: bold;
+  color: #7c1d6f;
+  margin-bottom: 30px;
+}
+
+/* Botón volver */
+.btn-back {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #a5f49c;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 14px;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Letras */
+.letter {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  background: #fde68a;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #7c2d12;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 0 #f59e0b;
+}
+
+/* Animación al tocar */
+.letter:active {
+  transform: translateY(4px) scale(0.95);
+  box-shadow: 0 2px 0 #f59e0b;
+}
+
+/* Hover (PC) */
+.letter:hover {
+  background: #fcd34d;
+}
+
+/* Ñ destacada */
+.letter.ñ {
+  background: #fde68a;
+  box-shadow: 0 6px 0 #f59e0b;
+  color: #831843;
+} 
+
+/* Imágenes centrales */
+.center-img {
+  position: absolute;
+  max-width: 120px;
+  opacity: 0.9;
+}
+
+.center-img.bear {
+  bottom: 20px;
+  left: 20px;
+}
+
+.center-img.cloud {
+  top: 80px;
+  right: 20px;
+}
+
+.center-img.grapes {
+  bottom: 30px;
+  right: 30px;
+}
+
+.center-img.star {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .letter {
+    width: 60px;
+    height: 60px;
+    font-size: 1.9rem;
+  }
+}

@@ -1,0 +1,79 @@
+/* 🟦 CONTENEDOR CON EL FONDO COMPLETO */
+.vowel-scene {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+
+  background-image: url('@/assets/img/fondo2.jpg');
+  background-size: cover;            /* Ocupa toda la pantalla SIN BARRAS */
+  background-repeat: no-repeat;
+  background-position: center top;   /* Mantiene el sol y nubes visibles */
+  overflow: hidden;
+}
+
+
+
+/* ⭐ Título */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  margin-top: 15px;
+  text-shadow: 2px 2px #444;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+/* ⬅️ Botón volver */
+.btn-back {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: rgb(233, 159, 159);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+
+/* 🔤 VOCAL */
+.vowel {
+  position: absolute;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #003366;
+  cursor: pointer;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+  z-index: 5;
+}
+
+.vowel:active {
+  transform: scale(0.9);
+}
+
+/* Posiciones */
+.a { left: 10%; top: 30%; }
+.e { left: 45%; top: 20%; }
+.i { right: 10%; top: 30%; }
+.o { left: 30%; bottom: 18%; }
+.u { right: 30%; bottom: 18%; }
+
+/* 🌿 CÉSPED (si usas una imagen separada)
+   — Si no usas la imagen grass.png, puedes borrar esto.
+*/
+.grass-full {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
