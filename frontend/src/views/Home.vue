@@ -58,7 +58,7 @@
 
       <div class="row g-4 justify-content-center">
         
-        <!-- Lecciones -->
+       <!-- Lecciones -->
         <div class="col-10 col-md-3 fade-in">
            <div class="card shadow-lg p-4 rounded-4 card-float card-lessons">
               <div class="icon-bounce mb-3">
