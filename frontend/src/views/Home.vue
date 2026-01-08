@@ -61,15 +61,12 @@
         <!-- Lecciones -->
         <div class="col-10 col-md-3 fade-in">
            <div class="card shadow-lg p-4 rounded-4 card-float card-lessons">
-    
               <div class="icon-bounce mb-3">
                <i class="bi bi-book display-1"></i>
               </div>
-
              <h3 class="fw-bold">Lecciones</h3>
             <p class="text-muted">Aprende paso a paso</p>
-
-            <button class="btn w-100 btn-lessons" @click="goToLessons">
+            <button class= "btn btn-danger w-100 rounded-pill fw-bold btn-hover" @click="goToLessons">
              <i class="bi bi-play-circle-fill me-2"></i> Entrar
             </button>
           </div>

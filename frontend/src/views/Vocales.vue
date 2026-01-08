@@ -1,5 +1,5 @@
 <template>
-  <!-- 🔙 Botón Volver -->
+  <!--  Botón Volver -->
   <button class="btn-back" @click="goBack">
     <i class="bi bi-arrow-left"></i>
   </button>
@@ -24,14 +24,14 @@
     <img src="" class="center-img bear" />
     <img src="" class="center-img cloud" />
     <img src="" class="center-img grapes" />
-
+ 
     <!-- Estrella -->
     <img src="" class="center-img star" />
     
   </div>
 </template>
 
-<script>
+<script> 
 export default {
   mounted() {
     // Obliga a Chrome a cargar las voces
