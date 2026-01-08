@@ -1,0 +1,111 @@
+.syllable-scene {
+  min-height: 100vh;
+  width: 100%;
+  padding: 90px 20px 40px;
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+
+  background: 
+    url('@/assets/img/nube2.png') repeat-x,
+    linear-gradient(to bottom, #7dd3fc, #e0f2fe);
+
+  background-size: 600px auto, cover;
+  animation: cloudsMove 60s linear infinite;
+}
+
+@keyframes cloudsMove {
+  from { background-position: 0 0, center; }
+  to   { background-position: -2000px 0, center; }
+}
+
+
+/* ===TÍTULO======== */
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: bold;
+  color: #7c1d6f;
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   BOTÓN VOLVER
+================================ */
+.btn-back {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #f9a8d4;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 14px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  z-index: 100;
+  transition: transform 0.2s ease;
+}
+
+.btn-back:active {
+  transform: scale(0.9);
+}
+
+/* ===============================
+   SÍLABAS
+================================ */
+.letter {
+  width: 100px;
+  height: 100px;
+  background: #fde68a;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #7c2d12;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 8px 0 #f59e0b;
+  transition: all 0.15s ease;
+}
+
+/* Efecto botón */
+.letter:active {
+  transform: translateY(6px) scale(0.95);
+  box-shadow: 0 3px 0 #f59e0b;
+}
+
+/* Hover PC */
+.letter:hover {
+  background: #fcd34d;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+  .letter {
+    width: 80px;
+    height: 80px;
+    font-size: 2.1rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .letter {
+    width: 70px;
+    height: 70px;
+    font-size: 1.9rem;
+  }
+}

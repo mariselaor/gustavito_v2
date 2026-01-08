@@ -1,13 +1,19 @@
-/* Fondo del juego */
+/* 🟦 CONTENEDOR CON EL FONDO COMPLETO */
 .vowel-scene {
+  min-height: 100vh;
   width: 100%;
-  height: 100vh;
-  background: linear-gradient(#4fc3f7, #b3e5fc);
   position: relative;
+
+  background-image: url('@/assets/img/fondo2.jpg');
+  background-size: cover;            /* Ocupa toda la pantalla SIN BARRAS */
+  background-repeat: no-repeat;
+  background-position: center top;   /* Mantiene el sol y nubes visibles */
   overflow: hidden;
 }
 
-/* Título */
+
+
+/* ⭐ Título */
 .title {
   text-align: center;
   font-size: 2rem;
@@ -15,6 +21,10 @@
   font-weight: bold;
   margin-top: 15px;
   text-shadow: 2px 2px #444;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
 }
 
 /* Botón Volver */
@@ -36,7 +46,7 @@
   cursor: pointer;
 }
 
-/* Vocales */
+/* 🔤 VOCAL */
 .vowel {
   position: absolute;
   font-size: 4rem;
@@ -48,48 +58,27 @@
   border-radius: 15px;
   box-shadow: 0 8px 15px rgba(0,0,0,0.2);
   transition: transform 0.2s;
+  z-index: 5;
 }
 
 .vowel:active {
   transform: scale(0.9);
 }
 
+/* Posiciones */
 .a { left: 10%; top: 30%; }
 .e { left: 45%; top: 20%; }
 .i { right: 10%; top: 30%; }
-.o { left: 30%; bottom: 15%; }
-.u { right: 30%; bottom: 15%; }
+.o { left: 30%; bottom: 18%; }
+.u { right: 30%; bottom: 18%; }
 
-/* Dibujos */
-.center-img {
+/* 🌿 CÉSPED (si usas una imagen separada)
+   — Si no usas la imagen grass.png, puedes borrar esto.
+*/
+.grass-full {
   position: absolute;
-  width: 90px;
-  animation: float 3s ease-in-out infinite;
-}
-
-.bear { left: 20%; top: 45%; }
-.cloud { left: 45%; top: 45%; }
-.grapes { right: 20%; top: 45%; }
-.star { left: 45%; top: 10%; width: 70px; }
-
-/* Decoraciones */
-.decor {
-  position: absolute;
-  width: 120px;
-}
-
-.plane {
-  top: 70px;
-  left: 20px;
-}
-
-.child {
-  top: 60px;
-  right: 20px;
-}
-
-/* Animación */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
