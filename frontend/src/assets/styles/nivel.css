@@ -1,0 +1,173 @@
+.nivel-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+  position: relative;
+}
+
+.nivel-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titulo-nivel {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 10px;
+  font-family: 'Comic Sans MS', sans-serif;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.descripcion {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 50px;
+  opacity: 0.9;
+}
+
+.juegos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.juego-card {
+  background: white;
+  border-radius: 25px;
+  padding: 40px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.juego-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.juego-card:hover::before {
+  left: 100%;
+}
+
+.juego-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.juego-card.bloqueado {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
+  color: white;
+}
+
+.juego-card.bloqueado:hover {
+  transform: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.juego-card.bloqueado::before {
+  display: none;
+}
+
+.icono {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.juego-card h3 {
+  font-size: 1.8rem;
+  color: #667eea;
+  margin-bottom: 10px;
+  font-family: 'Comic Sans MS', sans-serif;
+  font-weight: bold;
+}
+
+.juego-card.bloqueado h3 {
+  color: white;
+}
+
+.juego-card p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.juego-card.bloqueado p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.candado {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  animation: shake 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .titulo-nivel {
+    font-size: 2rem;
+  }
+  
+  .descripcion {
+    font-size: 1.2rem;
+  }
+  
+  .juegos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .juego-card {
+    padding: 30px 20px;
+  }
+  
+  .icono {
+    font-size: 4rem;
+  }
+  
+  .juego-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .juego-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-back {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .titulo-nivel {
+    font-size: 1.8rem;
+  }
+}

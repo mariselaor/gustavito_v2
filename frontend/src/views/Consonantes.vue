@@ -7,7 +7,7 @@
   <div class="letter-scene">
 
     <!-- Título -->
-    <h2 class="title">⭐ Haz clic en cada vocal ⭐</h2>
+    <h2 class="title">⭐ Haz clic en cada consonante ⭐</h2>
 
     <!-- Decoraciones -->
     <img src="" class="decor plane" />

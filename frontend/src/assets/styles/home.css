@@ -21,7 +21,7 @@
 /* Tarjeta Lecciones - Rojo */
 .card-lessons {
   background: #FFE5E5;         /* rojo pastel */
-  border: 3px solid #FF6B6B;   /* borde rojo suave */
+  border: 3px solid #f59999;   /* borde rojo suave */
 }
 
 .card-lessons h3 {
@@ -96,41 +96,6 @@
     transform: translateY(-100px) rotate(360deg);
     opacity: 0;
   }
-}
-
-/* Nubes animadas */
-.clouds {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.cloud {
-  position: absolute;
-  font-size: 4rem;
-  opacity: 0.5;
-  animation: cloud-drift 20s linear infinite;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.cloud1 {
-  top: 10%;
-  animation-duration: 25s;
-}
-
-.cloud2 {
-  top: 40%;
-  animation-duration: 30s;
-  animation-delay: 5s;
-}
-
-.cloud3 {
-  top: 70%;
-  animation-duration: 35s;
-  animation-delay: 10s;
 }
 
 @keyframes cloud-drift {

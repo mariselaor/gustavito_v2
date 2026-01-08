@@ -1,0 +1,433 @@
+.juego-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Comic Sans MS', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #f5576c;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  transform: scale(1.1) translateX(-5px);
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.cuenta-regresiva {
+  font-size: 10rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.menu-inicio {
+  background: white;
+  border-radius: 30px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  z-index: 10;
+}
+
+.menu-inicio h1 {
+  font-size: 3rem;
+  color: #f5576c;
+  margin: 0 0 20px 0;
+}
+
+.instrucciones {
+  font-size: 1.3rem;
+  color: #f093fb;
+  margin-bottom: 30px;
+}
+
+.tips {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  line-height: 2;
+}
+
+.tips div {
+  font-size: 1.1rem;
+}
+
+.btn-jugar {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 20px 50px;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-jugar:hover {
+  transform: scale(1.05) translateY(-3px);
+}
+
+.hud {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+.hud-item {
+  background: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+
+.estrella {
+  font-size: 1.8rem;
+  animation: rotar 2s linear infinite;
+}
+
+@keyframes rotar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.numero {
+  font-weight: bold;
+  color: #f5576c;
+}
+
+.progreso {
+  font-weight: bold;
+  color: #f093fb;
+}
+
+.area-juego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 100px;
+}
+
+.imagen-palabra {
+  font-size: 6rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.pista {
+  background: white;
+  padding: 15px 30px;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  color: #f093fb;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.respuesta-container {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.respuesta-area {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.letra-respuesta {
+  width: 70px;
+  height: 80px;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  border: 4px solid white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.letra-respuesta:hover {
+  transform: scale(1.1);
+}
+
+.espacio-vacio {
+  width: 70px;
+  height: 80px;
+  border: 4px dashed white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+  opacity: 0.5;
+}
+
+.mensaje {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f5576c;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: aparecer 0.5s ease-out;
+}
+
+.mensaje.correcto {
+  color: #43e97b;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.letras-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.letra-disponible {
+  width: 70px;
+  height: 80px;
+  background: white;
+  border: 4px solid #f5576c;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f5576c;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.letra-disponible:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.btn-verificar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 20px 60px;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-verificar:hover {
+  transform: scale(1.05) translateY(-3px);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 30px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  max-width: 450px;
+  animation: aparecer 0.5s ease-out;
+}
+
+.confetti {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.modal-titulo {
+  font-size: 2.5rem;
+  color: #f5576c;
+  margin: 10px 0 20px 0;
+}
+
+.palabras-info {
+  font-size: 1.3rem;
+  color: #43e97b;
+  font-weight: bold;
+  margin: 20px 0;
+  background: rgba(67, 233, 123, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.puntaje-final {
+  background: linear-gradient(135deg, #ffd89b 0%, #ff6b9d 100%);
+  padding: 30px;
+  border-radius: 25px;
+  margin: 30px 0;
+}
+
+.estrellas-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.estrella-final {
+  font-size: 4rem;
+  animation: aparecer-estrella 0.5s ease-out forwards;
+}
+
+@keyframes aparecer-estrella {
+  from { transform: scale(0) rotate(0deg); opacity: 0; }
+  to { transform: scale(1) rotate(360deg); opacity: 1; }
+}
+
+.puntos-finales {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mensaje-estrellas {
+  font-size: 1.4rem;
+  color: #f093fb;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.emoji-triste {
+  font-size: 5rem;
+  margin: 20px 0;
+}
+
+.texto-gameover {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.palabra-revelada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.emoji-grande {
+  font-size: 4rem;
+}
+
+.palabra-texto {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f093fb;
+}
+
+.estrella-grande {
+  font-size: 2.5rem;
+  margin-right: 15px;
+}
+
+.btn-modal {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 18px 40px;
+  font-size: 1.4rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-modal:hover {
+  transform: scale(1.05) translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .menu-inicio {
+    padding: 30px;
+    max-width: 90%;
+  }
+  
+  .modal-content {
+    padding: 30px;
+    max-width: 90%;
+  }
+  
+  .imagen-palabra {
+    font-size: 4rem;
+  }
+  
+  .letra-respuesta, .letra-disponible, .espacio-vacio {
+    width: 60px;
+    height: 70px;
+    font-size: 2rem;
+  }
+}

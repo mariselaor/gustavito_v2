@@ -3,7 +3,8 @@
 
     <!-- Toast Container -->
     <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999;">
-      <div ref="musicToast" class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div ref="musicToast" class="toast align-items-center text-white bg-warning border-0" role="alert"
+        aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
           <div class="toast-body">
             <i class="bi bi-music-note-beamed me-2"></i>
@@ -16,21 +17,8 @@
 
     <!-- Partículas flotantes -->
     <div class="particles">
-      <i class="particle bi bi-star-fill" v-for="n in 10" :key="'star'+n" :style="particleStyle(n)"></i>
-      <i class="particle bi bi-trophy-fill" v-for="n in 10" :key="'trophy'+n" :style="particleStyle(n+10)"></i>
-    </div>
-
-    <!-- Nubes decorativas -->
-    <div class="clouds">
-      <div class="cloud cloud1">
-        <i class="bi bi-cloud-fill"></i>
-      </div>
-      <div class="cloud cloud2">
-        <i class="bi bi-cloud-fill"></i>
-      </div>
-      <div class="cloud cloud3">
-        <i class="bi bi-cloud-fill"></i>
-      </div>
+      <i class="particle bi bi-star-fill" v-for="n in 10" :key="'star' + n" :style="particleStyle(n)"></i>
+      <i class="particle bi bi-trophy-fill" v-for="n in 10" :key="'trophy' + n" :style="particleStyle(n + 10)"></i>
     </div>
 
     <!-- Control de música con selector -->
@@ -39,7 +27,7 @@
         <i :class="isMusicPlaying ? 'bi bi-volume-up-fill' : 'bi bi-volume-mute-fill'"></i>
       </button>
       <select v-model="selectedSong" @change="changeSong" class="song-selector form-select shadow-sm">
-          <option value="">🎵 Elige una canción</option>
+        <option value="">🎵 Elige una canción</option>
         <option value="happy">🎉 Happy - Pharrell Williams</option>
         <option value="baby-shark">🦈 Baby Shark</option>
         <option value="twinkle">⭐ Twinkle Twinkle Little Star</option>
@@ -57,7 +45,7 @@
     <div class="container">
 
       <div class="row g-4 justify-content-center">
-        
+
        <!-- Lecciones -->
         <div class="col-10 col-md-3 fade-in">
            <div class="card shadow-lg p-4 rounded-4 card-float card-lessons">
@@ -80,7 +68,7 @@
             </div>
             <h3 class="fw-bold" style="color:#ff8c00;">Juegos</h3>
             <p class="text-muted">Diviértete aprendiendo</p>
-            <button class="btn btn-warning w-100 rounded-pill fw-bold btn-hover">
+            <button class="btn btn-warning w-100 rounded-pill fw-bold btn-hover" @click="$router.push('/juegos')">
               <i class="bi bi-play-circle-fill me-2"></i> Entrar
             </button>
           </div>
@@ -117,10 +105,8 @@
       </div>
 
       <!-- Cerrar sesión -->
-      <button 
-        @click="handleLogout" 
-        class="btn btn-danger mt-5 px-5 py-3 fw-bold rounded-pill fade-in-delay-3 btn-logout shadow-lg logout-animate"
-      >
+      <button @click="handleLogout"
+        class="btn btn-danger mt-5 px-5 py-3 fw-bold rounded-pill fade-in-delay-3 btn-logout shadow-lg logout-animate">
         <i class="bi bi-box-arrow-right me-2"></i> Cerrar sesión
       </button>
 
@@ -173,13 +159,12 @@ export default {
         <div class="toast align-items-center text-white bg-${type} border-0" role="alert">
           <div class="d-flex">
             <div class="toast-body">
-              <i class="bi bi-${
-                type === "warning"
-                  ? "exclamation-triangle"
-                  : type === "success"
-                  ? "check-circle"
-                  : "x-circle"
-              }-fill me-2"></i>
+              <i class="bi bi-${type === "warning"
+          ? "exclamation-triangle"
+          : type === "success"
+            ? "check-circle"
+            : "x-circle"
+        }-fill me-2"></i>
               ${message}
             </div>
             <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
