@@ -164,7 +164,6 @@ const palabras = [
   { palabra: 'GLOBO', imagen: '🎈' },
   { palabra: 'ROBOT', imagen: '🤖' },
   { palabra: 'DADO', imagen: '🎲' },
-  { palabra: 'BESO', imagen: '💋' },
   { palabra: 'MANO', imagen: '✋' },
   { palabra: 'PIE', imagen: '👣' },
   { palabra: 'OJO', imagen: '👁️' },
@@ -387,7 +386,7 @@ function validarLetra(index) {
         // Continuar con siguiente palabra
         setTimeout(() => {
           siguientePalabra()
-        }, 800)
+        }, 1500)
       }
     }
   } else {

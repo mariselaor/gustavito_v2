@@ -157,7 +157,7 @@ const palabras = [
   { palabra: 'PEZ', imagen: '🐟', pista: 'Animal que vive en el agua' },
   { palabra: 'VACA', imagen: '🐄', pista: 'Animal que da leche' },
   { palabra: 'POLLO', imagen: '🐔', pista: 'Ave que pone huevos' },
-  { palabra: 'BOLA', imagen: '⚽', pista: 'Juguete redondo' },
+  { palabra: 'BALON', imagen: '⚽', pista: 'Juguete redondo' },
   { palabra: 'LIBRO', imagen: '📖', pista: 'Tiene muchas páginas' },
   { palabra: 'NUBE', imagen: '☁️', pista: 'Blanca en el cielo' },
   { palabra: 'MAR', imagen: '🌊', pista: 'Agua salada grande' },
@@ -280,7 +280,7 @@ function calcularEstrellas() {
 
 function mensajePorEstrellas() {
   const estrellas = calcularEstrellas()
-  if (estrellas === 3) return '¡Perfecto! Eres un maestro de las palabras 🏆'
+  if (estrellas === 3) return '¡Perfecto! 🏆'
   if (estrellas === 2) return '¡Muy bien! Sigue practicando 💪'
   return '¡Buen intento! Inténtalo de nuevo 😊'
 }
